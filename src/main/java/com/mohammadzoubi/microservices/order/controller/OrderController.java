@@ -77,7 +77,7 @@ public class OrderController {
     }
 
     @GetMapping("/customer/{customerId}")
-    public ResponseEntity<PageResult<GetAllCustomerOrdersResponse> > getOrderByCustomerId(
+    public ResponseEntity<PageResult<GetAllCustomerOrdersResponse> > getCustomerOrdersByCustomerId(
             @PathVariable(name = "customerId") final Long customerId,
             @RequestParam(name = "page-number",
                     defaultValue = SystemConfig.DEFAULT_PAGE_NUMBER,
