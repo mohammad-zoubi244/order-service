@@ -55,5 +55,10 @@ Order Service Swagger UI: http://localhost:8083/order/swagger-ui/index.html
 
 ---
 
+## 📄 License
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software with proper attribution. See the LICENSE file for more details.
+
+---
+
 ## 👤 Author
 Mohammad Zoubi
