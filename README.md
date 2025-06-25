@@ -23,11 +23,37 @@ Prerequisites
 - Maven
 - Git
 
-Clone & Run
+## Clone & Run
 ```
 git clone https://github.com/mohammad-zoubi244/order-service.git
 cd order-service
 mvn clean install
 ```
 The service will be available at:
-http://localhost:8083/orders
+http://localhost:8083/order
+
+---
+
+## 🔌 API Endpoints
+| Method | Endpoint                             | Description         |
+| ------ | ------------------------------------ | ------------------- |
+| GET    | /api/v1/orders                       | Retrieve all orders |
+| GET    | /api/v1/orders/{orderId}             | Get an order by ID  |
+| GET    | /api/v1/orders/customer/{customerId} | Get customer orders |
+| GET    | /api/v1/orders/{orderId}/items       | Get order items     |
+| POST   | /api/v1/orders                       | Create a new order  |
+| PUT    | /api/v1/orders/{orderId}             | Update order info   |
+| PATCH  | /api/v1/orders/{orderId}/status      | Update order status |
+| DELETE | /api/v1/orders/{orderId}             | Delete an order     |
+
+---
+
+## 📌 API Documentation
+Once the service is running locally, you can access Swagger UI here:
+
+Order Service Swagger UI: http://localhost:8083/order/swagger-ui/index.html
+
+---
+
+## 👤 Author
+Mohammad Zoubi
