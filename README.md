@@ -40,10 +40,10 @@ http://localhost:8083/order
 | GET    | /api/v1/orders                       | Retrieve all orders |
 | GET    | /api/v1/orders/{orderId}             | Get an order by ID  |
 | GET    | /api/v1/orders/customer/{customerId} | Get customer orders |
-| GET    | /api/v1/orders/{orderId}/items       | Get order items     |
+| GET    | /api/v1/orders/{orderId}/items       | Get an order items     |
 | POST   | /api/v1/orders                       | Create a new order  |
-| PUT    | /api/v1/orders/{orderId}             | Update order info   |
-| PATCH  | /api/v1/orders/{orderId}/status      | Update order status |
+| PUT    | /api/v1/orders/{orderId}             | Update an order info   |
+| PATCH  | /api/v1/orders/{orderId}/status      | Update an order status |
 | DELETE | /api/v1/orders/{orderId}             | Delete an order     |
 
 ---
