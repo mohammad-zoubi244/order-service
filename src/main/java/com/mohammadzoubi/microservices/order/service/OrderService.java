@@ -100,7 +100,7 @@ public class OrderService {
                                 .customerId(p.getCustomerId())
                                 .status(p.getStatus())
                                 .totalAmount(p.getTotalAmount())
-                                .orderDate(p.getOrderDate())
+                                .orderDate(p.getOrderDate().toLocalDate())
                                 .build()).toList()).build();
 
         return PageResult.<GetAllOrdersResponse>builder()
@@ -170,7 +170,7 @@ public class OrderService {
                 .customerId(getOrderProjection.getCustomerId())
                 .status(getOrderProjection.getStatus())
                 .totalAmount(getOrderProjection.getTotalAmount())
-                .orderDate(getOrderProjection.getOrderDate())
+                .orderDate(getOrderProjection.getOrderDate().toLocalDate())
                 .build();
     }
 
@@ -194,7 +194,7 @@ public class OrderService {
                                 .orderNumber(p.getOrderNumber())
                                 .status(p.getStatus())
                                 .totalAmount(p.getTotalAmount())
-                                .orderDate(p.getOrderDate())
+                                .orderDate(p.getOrderDate().toLocalDate())
                                 .build()).toList()).build();
 
         return PageResult.<GetAllCustomerOrdersResponse>builder()

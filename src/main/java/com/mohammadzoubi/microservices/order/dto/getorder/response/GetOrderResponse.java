@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -17,5 +18,5 @@ public class GetOrderResponse {
     private String orderNumber;
     private String status;
     private BigDecimal totalAmount;
-    private LocalDateTime orderDate;
+    private LocalDate orderDate;
 }

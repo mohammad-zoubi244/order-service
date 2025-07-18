@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -18,6 +18,6 @@ public class OrderDetails {
     private String orderNumber;
     private String status;
     private BigDecimal totalAmount;
-    private LocalDateTime orderDate;
+    private LocalDate orderDate;
 
 }
