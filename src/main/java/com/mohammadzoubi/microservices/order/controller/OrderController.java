@@ -53,6 +53,8 @@ public class OrderController {
 
     @GetMapping()
     public ResponseEntity<PageResult<GetAllOrdersResponse>> getOrders(
+            @RequestParam(name = "order-number",
+                    required = false) final String orderNumber,
             @RequestParam(name = "page-number",
                     defaultValue = SystemConfig.DEFAULT_PAGE_NUMBER,
                     required = false) final Integer pageNumber,
@@ -61,7 +63,7 @@ public class OrderController {
                     required = false) final Integer pageSize) {
 
         final PageResult<GetAllOrdersResponse> orders =
-                orderService.getOrders(pageNumber, pageSize);
+                orderService.getOrders(orderNumber, pageNumber, pageSize);
 
         return ResponseEntity.status(HttpStatus.OK).body(orders);
     }
@@ -77,7 +79,7 @@ public class OrderController {
     }
 
     @GetMapping("/customer/{customerId}")
-    public ResponseEntity<PageResult<GetAllCustomerOrdersResponse> > getCustomerOrdersByCustomerId(
+    public ResponseEntity<PageResult<GetAllCustomerOrdersResponse>> getCustomerOrdersByCustomerId(
             @PathVariable(name = "customerId") final Long customerId,
             @RequestParam(name = "page-number",
                     defaultValue = SystemConfig.DEFAULT_PAGE_NUMBER,
@@ -86,10 +88,10 @@ public class OrderController {
                     defaultValue = SystemConfig.DEFAULT_PAGE_SIZE,
                     required = false) final Integer pageSize) {
 
-            final PageResult<GetAllCustomerOrdersResponse> orders =
-                    orderService.getOrdersByCustomerId(customerId, pageNumber, pageSize);
+        final PageResult<GetAllCustomerOrdersResponse> orders =
+                orderService.getOrdersByCustomerId(customerId, pageNumber, pageSize);
 
-            return ResponseEntity.status(HttpStatus.OK).body(orders);
+        return ResponseEntity.status(HttpStatus.OK).body(orders);
 
     }
 

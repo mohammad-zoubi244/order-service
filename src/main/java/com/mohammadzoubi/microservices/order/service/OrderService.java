@@ -80,6 +80,7 @@ public class OrderService {
     }
 
     public PageResult<GetAllOrdersResponse> getOrders(
+            final String orderNumber,
             final Integer pageNumber,
             final Integer pageSize) {
 
@@ -88,7 +89,7 @@ public class OrderService {
                 Sort.by(Sort.Direction.DESC,
                         SystemConfig.DEFAULT_ORDER_SORTING));
 
-        Page<GetOrdersProjection> ordersProjections = orderRepository.getOrders(pageable);
+        Page<GetOrdersProjection> ordersProjections = orderRepository.getOrders(orderNumber,pageable);
 
         final GetAllOrdersResponse content = GetAllOrdersResponse.builder().orders(
                 ordersProjections

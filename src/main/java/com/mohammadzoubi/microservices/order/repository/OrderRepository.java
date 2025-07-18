@@ -39,13 +39,16 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     @Query(value = """
             SELECT o.order_id AS orderId,
                    o.customer_id AS customerId,
-                   o.order_number AS OrderNumber,
+                   o.order_number AS orderNumber,
                    o.status AS status,
                    o.total_amount AS totalAmount,
                    o.order_date AS orderDate
             FROM orders o
+             WHERE (:orderNumber IS NULL OR LOWER(order_number) LIKE CONCAT('%',:orderNumber,'%'))
             """, nativeQuery = true)
-    Page<GetOrdersProjection> getOrders(Pageable pageable);
+    Page<GetOrdersProjection> getOrders(
+            @Param("orderNumber") String orderNumber,
+            Pageable pageable);
 
     @Query(value = """
             SELECT o.order_id AS orderId,
